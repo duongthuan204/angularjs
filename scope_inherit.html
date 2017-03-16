@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scope Inherit</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/scope_inherit.js"></script>
+	<style>
+		div{
+			border:solid black 1px;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="MainController">
+		<h1>Good {{time}}, {{name}}</h1>
+		<div ng-controller="ChildController">
+			<h1>Good {{time}}, {{name}}</h1>
+			<div ng-controller="GrandchildController">
+				<h1>Good {{time}}, {{name}}</h1>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

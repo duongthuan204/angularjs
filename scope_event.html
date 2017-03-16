@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scope Event</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/scope_event.js"></script>
+	<style>
+		div {
+			border:solid black 1px;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="MainController">
+		<p>Main count: {{count}}</p>
+		<div ng-controller="ChildController">
+			<p>Child count: {{count}}</p>
+			<button ng-lick="$emit('MyEvent')"/>$emit('MyEvent')</button>
+			<button ng-lick="$broadcast('MyEvent')"/>$broadcast('MyEvent')</button>
+			<p/>
+			<div ng-controller="GrandchildController">
+				<p>Grandchild count: {{count}}</p>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
